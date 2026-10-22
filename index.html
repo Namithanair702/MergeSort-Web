@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <h2>AlgoLab</h2>
+        <span>DESIGN & ANALYSIS OF ALGORITHMS</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <p>DIVIDE AND CONQUER</p>
+            <h1>Merge Sort <span>Visualizer</span></h1>
+            <p>Watch your numbers divide, sort, and merge step by step.</p>
+        </section>
+
+        <section class="card">
+            <h2>01 / Enter Your Array</h2>
+            <p>Enter integers separated by commas or spaces.</p>
+
+            <div class="input-row">
+                <input
+                    type="text"
+                    id="numberInput"
+                    placeholder="Example: 38, 12, 45, 7, 23, 16"
+                >
+                <button id="generateBtn">Generate Array →</button>
+            </div>
+
+            <p id="arrayCount">0 numbers</p>
+        </section>
+
+        <section class="card">
+            <h2>02 / Sorting Visualization</h2>
+
+            <div class="visual-header">
+                <h3 id="stepTitle">Ready to sort?</h3>
+                <span id="phaseBadge">READY</span>
+            </div>
+
+            <div id="arrayView">
+                <p>Enter your numbers above to begin.</p>
+            </div>
+
+            <p id="stepCounter">Step 0 / 0</p>
+
+            <div class="controls">
+                <button id="resetBtn">Reset</button>
+                <button id="prevBtn" disabled>← Previous</button>
+                <button id="nextBtn" disabled>Next Step →</button>
+                <button id="playBtn" disabled>▶ Auto Play</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>03 / Step Explanation</h2>
+            <p id="explanation">
+                Your step-by-step explanation will appear here.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>04 / Algorithm Complexity</h2>
+            <p>Best Case: O(n log n)</p>
+            <p>Average Case: O(n log n)</p>
+            <p>Worst Case: O(n log n)</p>
+            <p>Auxiliary Space: O(n)</p>
+        </section>
+
+    </main>
+
+    <footer>
+        AlgoLab · Merge Sort · Divide and Conquer
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

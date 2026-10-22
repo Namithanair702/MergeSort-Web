@@ -1,0 +1,341 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #0c1020;
+    --card: #171d35;
+    --border: #303957;
+    --text: #f4f5ff;
+    --muted: #a1accb;
+    --purple: #9b7bff;
+    --cyan: #52e4e7;
+    --pink: #ff7bba;
+    --green: #6ee7b7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at top left, #292052, transparent 45%),
+        radial-gradient(ellipse at bottom right, #123348, transparent 40%),
+        var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+}
+
+.topbar {
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #ffffff15;
+    background: #0c1020cc;
+}
+
+.topbar h2 {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    color: var(--purple);
+}
+
+.topbar span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.container {
+    width: 88%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero {
+    padding: 55px 0 35px;
+}
+
+.hero > p:first-child {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(38px, 6vw, 58px);
+    line-height: 1.1;
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero > p:last-child {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.card {
+    padding: 25px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: linear-gradient(145deg, #1b223d, #13192c);
+    box-shadow: 0 15px 40px #00000018;
+}
+
+.card h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.card > p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    color: white;
+    background: #0c1226;
+    border: 1px solid #3b4569;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px #9b7bff20;
+}
+
+input::placeholder {
+    color: #737f9f;
+}
+
+button {
+    padding: 13px 17px;
+    border: 1px solid #414b70;
+    border-radius: 9px;
+    background: #252e4c;
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+}
+
+button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+#generateBtn {
+    background: linear-gradient(110deg, #8565f6, #a36bff);
+    border: none;
+    box-shadow: 0 6px 20px #9b7bff25;
+}
+
+#arrayCount {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.visual-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.visual-header h3 {
+    font-size: 16px;
+}
+
+#phaseBadge {
+    padding: 8px 12px;
+    border: 1px solid #52e4e740;
+    border-radius: 20px;
+    background: #52e4e710;
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#arrayView {
+    min-height: 150px;
+    margin: 15px 0;
+    padding: 22px 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px dashed #414b70;
+    border-radius: 12px;
+    background: #0e1427;
+}
+
+#arrayView > p {
+    color: var(--muted);
+    text-align: center;
+}
+
+.array-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 48px;
+    height: 52px;
+    padding: 0 10px;
+    border: 1px solid #526083;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #293451, #1a223a);
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    animation: appear .25s ease both;
+}
+
+.array-cell.active {
+    color: #e4dcff;
+    border-color: var(--purple);
+    background: #9b7bff25;
+    box-shadow: 0 0 17px #9b7bff22;
+}
+
+.array-cell.sorted {
+    color: #a8ffdc;
+    border-color: #6ee7b7;
+    background: #6ee7b71b;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(7px) scale(.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#stepCounter {
+    text-align: right;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+#nextBtn {
+    background: linear-gradient(110deg, #8565f6, #a36bff);
+    border: none;
+}
+
+#playBtn {
+    color: #101b30;
+    background: var(--cyan);
+    border-color: var(--cyan);
+}
+
+#explanation {
+    padding: 17px;
+    border-radius: 10px;
+    border-left: 3px solid var(--pink);
+    background: #ff7bba0b;
+}
+
+footer {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #8c98b9;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        padding: 18px 6%;
+    }
+
+    .topbar span {
+        display: none;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 38px 0 25px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row button {
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+
+    .visual-header h3 {
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
